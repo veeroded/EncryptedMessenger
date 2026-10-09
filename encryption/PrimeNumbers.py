@@ -1,5 +1,7 @@
 from random import randint
 
+from secrets import randbits
+
 
 def factor(n: int) -> tuple[int, int]:
     d: int = n
@@ -41,7 +43,7 @@ def twoRandomPrimes() -> tuple(int, int):
     prime = False
 
     while not prime:
-        num1 = randint((2**1023), (2**1024))
+        num1 = randbits(1024)
         prime = isprime(num1)
 
     prime = False
@@ -50,9 +52,3 @@ def twoRandomPrimes() -> tuple(int, int):
         prime = isprime(num2)
 
     return num1, num2
-
-
-# x = eval(input("num:"))
-
-
-print(twoRandomPrimes())
